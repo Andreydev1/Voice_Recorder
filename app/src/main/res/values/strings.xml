@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Voice Recorder</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="recorded_voices">Voices</string>
+    <string name="record">Record</string>
+    <string name="notification_error">Ошибка записи</string>
+    <string name="notification_recording">Запись идет</string>
+    <string name="default_file_name">Без названия</string>
+    <string name="recording_toast">Запись остановлена</string>
+</resources>
