@@ -4,14 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.voicerecorder.databinding.FragmentHomeBinding
+import com.example.voicerecorder.databinding.FragmentRecordBinding
+
 
 class RecorderFragment : Fragment() {
-
-    private var _binding: FragmentHomeBinding? = null
+    private lateinit var recordViewModel: RecorderViewModel
+    private var _binding: FragmentRecordBinding? = null
 
 
     private val binding get() = _binding!!
@@ -24,13 +24,9 @@ class RecorderFragment : Fragment() {
         val recorderViewModel =
             ViewModelProvider(this).get(RecorderViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentRecordBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        recorderViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 
