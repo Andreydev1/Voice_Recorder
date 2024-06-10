@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.os.CountDownTimer
 import android.os.SystemClock
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.concurrent.TimeUnit
 
-class RecorderViewModel(private val app:Application) : ViewModel() {
+class RecorderViewModel(private val app:Application) : AndroidViewModel(app){
 
     private val TRIGGER_TIME = "TRIGGER_AI"
     private val second:Long = 1_000L
@@ -26,6 +27,10 @@ class RecorderViewModel(private val app:Application) : ViewModel() {
     val elapsedTime:LiveData<String>get() = _elapsedTime
 
     private lateinit var timer:CountDownTimer
+
+    init {
+        createTimer()
+    }
 
     fun timeFormatter(time:Long):String{
         return String.format("%02d:%02d:%02d",
