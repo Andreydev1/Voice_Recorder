@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_record"
-        android:icon="@drawable/mic_ic"
+        android:icon="@drawable/ic_mic"
         android:title="@string/record"/>
 
     <item

@@ -9,4 +9,9 @@
     <string name="notification_recording">Запись идет</string>
     <string name="default_file_name">Без названия</string>
     <string name="recording_toast">Запись остановлена</string>
+    <string name="notification_channel_id">channel_id</string>
+    <string name="notification_channel_name">channel_name</string>
+    <string name="recording_toast_permisson">Error. No access to the microphone!</string>
+    <string name="file_name">file_name</string>
+    <string name="timer_start_value">00:00</string>
 </resources>

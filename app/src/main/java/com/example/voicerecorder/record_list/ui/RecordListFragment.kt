@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.voicerecorder.databinding.FragmentDashboardBinding
+import com.example.voicerecorder.database.RecordDataBase
+import com.example.voicerecorder.databinding.FragmentListRecordsBinding
+
 
 class RecordListFragment : Fragment() {
 
-    private var _binding: FragmentDashboardBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentListRecordsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,16 +21,9 @@ class RecordListFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val recordListViewModel =
-            ViewModelProvider(this).get(RecordListViewModel::class.java)
-
-        _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+        _binding = FragmentListRecordsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        recordListViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
     }
 

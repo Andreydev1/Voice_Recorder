@@ -47,7 +47,8 @@ class RecorderViewModel(private val app:Application) : AndroidViewModel(app){
         val triggerTime: Long = SystemClock.elapsedRealtime()
 
         viewModelScope.launch {
-            TODO()
+            saveTime(triggerTime)
+            createTimer()
         }
     }
     private suspend fun saveTime(triggerTime:Long){
